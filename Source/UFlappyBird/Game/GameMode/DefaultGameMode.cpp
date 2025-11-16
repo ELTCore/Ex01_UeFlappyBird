@@ -3,3 +3,12 @@
 
 #include "DefaultGameMode.h"
 
+#include "UFlappyBird/Game/Characters/Bird.h"
+#include "UFlappyBird/Game/HUD/BirdHud.h"
+
+ADefaultGameMode::ADefaultGameMode()
+{
+	DefaultPawnClass = ABird::StaticClass();
+	HUDClass = ABirdHud::StaticClass();
+	
+}
