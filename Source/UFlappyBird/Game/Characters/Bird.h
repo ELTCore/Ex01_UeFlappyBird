@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InputActionValue.h"
 #include "GameFramework/Pawn.h"
 #include "Bird.generated.h"
 
@@ -14,16 +15,37 @@ class UFLAPPYBIRD_API ABird : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABird();
+	//
+	void OnConstruction(const FTransform& Transform) override;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// 组件
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Bird")
+	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
+	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
+	class UCameraComponent*        MainCemera;            // 主相机
+	class USphereComponent*        SphereComponent;       // 碰撞箱
+	// 资产
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird")
+	class UPaperFlipbook* BirdFlipbook; // 鸟
+
+	// 输入映射
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	class UInputMappingContext* InputMapping;
+
+	// Fly
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	class UInputAction* FlyAction;
+	void OnFlyAction(const FInputActionValue& InputActionValue);
 
 };
