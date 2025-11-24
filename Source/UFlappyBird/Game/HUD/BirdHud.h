@@ -13,5 +13,14 @@ UCLASS()
 class UFLAPPYBIRD_API ABirdHud : public AHUD
 {
 	GENERATED_BODY()
+
+public:
+	virtual void BeginPlay() override;
+	virtual void OnConstruction(const FTransform& Transform) override;
 	
+	UPROPERTY(EditAnywhere, Category="HUD")
+	TSubclassOf<class UStartButton> StartButtonClass;
+
+	UPROPERTY()
+	UStartButton* StartButton;
 };

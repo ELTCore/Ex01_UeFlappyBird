@@ -17,6 +17,7 @@ public:
 	ABird();
 	//
 	void OnConstruction(const FTransform& Transform) override;
+	bool InitializePlayerInput() const;
 
 protected:
 	// Called when the game starts or when spawned
@@ -34,7 +35,8 @@ public:
 	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
 	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
 	class UCameraComponent*        MainCemera;            // 主相机
-	class USphereComponent*        SphereComponent;       // 碰撞箱
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	class USphereComponent*        ShpereComponent;       // 碰撞箱
 	// 资产
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird")
 	class UPaperFlipbook* BirdFlipbook; // 鸟

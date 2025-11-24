@@ -7,6 +7,7 @@
 #include "PaperFlipbookComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/SphereComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
@@ -16,26 +17,31 @@ ABird::ABird()
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	
 
 	// 组件构建
 	RootComponent         = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultRoot"));
 	BirdFlipbookComponent = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("BirdFlipbookComponent"));
 	SpringArm             = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	MainCemera            = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCemera"));
-	SphereComponent       = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
+	ShpereComponent       = CreateDefaultSubobject<USphereComponent>(TEXT("USphereComponent"));
 	// 组件依附
 	BirdFlipbookComponent->SetupAttachment(RootComponent);
 	SpringArm->SetupAttachment(RootComponent);
 	MainCemera->SetupAttachment(SpringArm);
-	SphereComponent->SetupAttachment(RootComponent);
+	ShpereComponent->SetupAttachment(RootComponent);
 	// 组件设置
 	SpringArm->bDoCollisionTest = false;
 	MainCemera->SetProjectionMode(ECameraProjectionMode::Orthographic);
 	MainCemera->OrthoWidth = 1000.f;
 	SpringArm->SetRelativeRotation(FRotator(0.0, -90, 0.0));
+
 	// 输入映射
 	InputMapping = nullptr;
 	FlyAction    = nullptr;
+
+	
+	
 }
 
 void ABird::OnConstruction(const FTransform& Transform)
@@ -44,32 +50,41 @@ void ABird::OnConstruction(const FTransform& Transform)
 	if (BirdFlipbook && BirdFlipbookComponent)
 	{
 		BirdFlipbookComponent->SetFlipbook(BirdFlipbook);
+		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
 	}
+
 }
 
 
-// Called when the game starts or when spawned
-void ABird::BeginPlay()
+bool ABird::InitializePlayerInput() const
 {
-	Super::BeginPlay();
-
 	APlayerController* PC = Cast<APlayerController>(GetController());
 	if (!PC)
 	{
-		return;
+		return true;
 	}
-
 	ULocalPlayer*                       CurPlayer = PC->GetLocalPlayer();
 	UEnhancedInputLocalPlayerSubsystem* Subsys    = nullptr;
 	if (CurPlayer)
 	{
 		Subsys = CurPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
 	}
-
 	if (CurPlayer && Subsys)
 	{
 		Subsys->AddMappingContext(InputMapping, 0);
 	}
+
+	return false;
+}
+
+// Called when the game starts or when spawned
+void ABird::BeginPlay()
+{
+	Super::BeginPlay();
+
+	if (InitializePlayerInput())
+		return;
+
 }
 
 // Called every frame
@@ -87,7 +102,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 	if (EIC)
 	{
-		EIC->BindAction(FlyAction, ETriggerEvent::Triggered, this, &ABird::OnFlyAction);
+		EIC->BindAction(FlyAction, ETriggerEvent::Started, this, &ABird::OnFlyAction);
 	}
 
 	UE_LOG(LogTemp, Display, TEXT("Bird::SetupPlayerInputComponent End"));
@@ -96,6 +111,7 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 void ABird::OnFlyAction(const FInputActionValue& InputActionValue)
 {
 	UE_LOG(LogTemp, Display, TEXT("OnFlyAction"));
+	BirdFlipbookComponent->SetPhysicsLinearVelocity(FVector::ZeroVector);
+	BirdFlipbookComponent->AddImpulse(FVector(0, 0, 2500)); // 开启物理模拟才有效果
 
-	
 }
