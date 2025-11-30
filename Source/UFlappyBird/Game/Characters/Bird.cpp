@@ -61,7 +61,7 @@ bool ABird::InitializePlayerInput() const
 	APlayerController* PC = Cast<APlayerController>(GetController());
 	if (!PC)
 	{
-		return true;
+		return false;
 	}
 	ULocalPlayer*                       CurPlayer = PC->GetLocalPlayer();
 	UEnhancedInputLocalPlayerSubsystem* Subsys    = nullptr;
@@ -74,7 +74,7 @@ bool ABird::InitializePlayerInput() const
 		Subsys->AddMappingContext(InputMapping, 0);
 	}
 
-	return false;
+	return true;
 }
 
 // Called when the game starts or when spawned

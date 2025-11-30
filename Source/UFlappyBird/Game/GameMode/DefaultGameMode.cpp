@@ -9,6 +9,6 @@
 ADefaultGameMode::ADefaultGameMode()
 {
 	// DefaultPawnClass = ABird::StaticClass();
-	HUDClass = ABirdHud::StaticClass();
+	// HUDClass = ABirdHud::StaticClass();
 	
 }
