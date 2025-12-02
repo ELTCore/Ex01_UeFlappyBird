@@ -8,41 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/MainMenuUI.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/MainMenuUI.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/UIManager.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/UIManager.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/UIScreenBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/UIScreenBase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/Animation/PF_Red_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/Animation/PF_Red_Bird.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_0.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_0_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_1_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird0_2_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird1_0.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird1_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird1_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_0.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_0_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_1_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird2_2_Sprite.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_DefaultGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_DefaultGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_StartButton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UFlappyBird.uproject.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/UFlappyBird.uproject.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,58 +23,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://4" root0="FORCE_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://5" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Intermediate/Build/Win64/UnrealEditor/Inc/Engine/UHT/SpringArmComponent.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/CoreGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Logging/LogVerbosity.h" root0="FORCE_HIGHLIGHTING" />
@@ -123,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/HUD.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/PlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Private/HUD.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Components/MultiLineEditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/BackGroundActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/BackGroundActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -242,14 +158,6 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration default="true" type="Uproject" factoryName="rider.uproject">
-      <option name="DEFAULT_PROJECT_PATH" value="" />
-      <option name="PROJECT_FILE_PATH" value="" />
-      <option name="AUTO_SELECT_PRIORITY" value="0" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -271,6 +179,7 @@
       <workItem from="1764425303614" duration="2080000" />
       <workItem from="1764488089037" duration="7352000" />
       <workItem from="1764511971712" duration="2685000" />
+      <workItem from="1764688677505" duration="1293000" />
     </task>
     <servers />
   </component>
