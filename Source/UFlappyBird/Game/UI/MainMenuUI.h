@@ -24,10 +24,22 @@ protected:
 	UPROPERTY(meta = (BindWidget))
 	class UButton* QuitButton;
 
+    UPROPERTY(meta = (BindWidget))
+    class UButton* SkinButton;
+
+	UPROPERTY(EditDefaultsOnly, Category="UI")
+	TSubclassOf<class UChooseBirdSkinUI> ChooseBirdSkinUIClass;
+	
 private:
 	UFUNCTION()
 	void OnStartButtonClicked();
 
 	UFUNCTION()
 	void OnQuitButtonClicked();
+
+	UFUNCTION()
+	void OnSkinButtonClicked();
+
+	UPROPERTY()
+	UChooseBirdSkinUI* ChooseBirdSkinUI;
 };

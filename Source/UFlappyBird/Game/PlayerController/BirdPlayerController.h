@@ -21,6 +21,7 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category="UI")
 	TSubclassOf<class UMainMenuUI> MainMenuUIClass;
 
+
 private:
 	UPROPERTY()
 	UMainMenuUI* MainMenuUI;
