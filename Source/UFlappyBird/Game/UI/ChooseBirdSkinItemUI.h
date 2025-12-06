@@ -13,16 +13,17 @@ UCLASS()
 class UFLAPPYBIRD_API UChooseBirdSkinItemUI : public UUserWidget
 {
 	GENERATED_BODY()
+
 public:
 	virtual void NativeConstruct() override;
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Text")
 	FString Name = TEXT("Default Name");
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Text")
-	FText Description =  FText::FromString(TEXT("Default description text."));
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="ContentSource")
-	class UPaperFlipbookComponent* BirdFlipbookComponent;
+	FText Description = FText::FromString(TEXT("Default description text."));
+
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
+	// FImage* PreviewImg;
 };
