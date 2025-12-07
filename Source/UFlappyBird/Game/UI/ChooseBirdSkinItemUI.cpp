@@ -2,9 +2,19 @@
 
 
 #include "ChooseBirdSkinItemUI.h"
+#include "Components/Button.h"
 
 void UChooseBirdSkinItemUI::NativeConstruct()
 {
 	Super::NativeConstruct();
-	
+
+	if (ChooseButton)
+	{
+		ChooseButton->OnClicked.AddDynamic(this, &UChooseBirdSkinItemUI::OnChooseButtonClicked);
+	}
+}
+
+void UChooseBirdSkinItemUI::OnChooseButtonClicked()
+{
+	UE_LOG(LogTemp, Log, TEXT("UChooseBirdSkinItemUI::OnChooseButtonClicked"));
 }

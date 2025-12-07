@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/Button.h"
 #include "ChooseBirdSkinItemUI.generated.h"
+
 
 /**
  * 
@@ -23,7 +25,10 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Text")
 	FText Description = FText::FromString(TEXT("Default description text."));
+	
+	UPROPERTY(meta = (BindWidget))
+	class UButton* ChooseButton;
 
-	// UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
-	// FImage* PreviewImg;
+	UFUNCTION()
+	void OnChooseButtonClicked();
 };

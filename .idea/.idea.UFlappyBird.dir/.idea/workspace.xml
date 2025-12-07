@@ -9,10 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_0.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_0.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/PlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Private/HUD.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/ImageCore/Public/ImageCore.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Slate/Public/Widgets/Input/SButton.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/UMG/Public/Components/MultiLineEditableTextBox.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/BackGroundActor.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -188,6 +189,8 @@
       <workItem from="1764688677505" duration="1293000" />
       <workItem from="1764942418070" duration="3543000" />
       <workItem from="1765020321079" duration="3149000" />
+      <workItem from="1765112748338" duration="155000" />
+      <workItem from="1765113703521" duration="2530000" />
     </task>
     <servers />
   </component>
