@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "UIScreenBase.h"
-#include "Blueprint/UserWidget.h"
 #include "ChooseBirdSkinUI.generated.h"
 
 /**
@@ -19,4 +18,6 @@ public:
 	virtual void NativeConstruct() override;
 
 	void OnShow() override;
+	void SetupBinding();
+	
 };

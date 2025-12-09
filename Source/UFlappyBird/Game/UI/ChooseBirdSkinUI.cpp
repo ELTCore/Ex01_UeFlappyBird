@@ -7,6 +7,8 @@ void UChooseBirdSkinUI::NativeConstruct()
 {
 	Super::NativeConstruct();
 	SetIsFocusable(true);
+
+	
 }
 
 void UChooseBirdSkinUI::OnShow()
@@ -19,4 +21,10 @@ void UChooseBirdSkinUI::OnShow()
 		PC->SetShowMouseCursor(true);
 		this->SetFocus();
 	}
+}
+
+
+void UChooseBirdSkinUI::SetupBinding()
+{
+		
 }

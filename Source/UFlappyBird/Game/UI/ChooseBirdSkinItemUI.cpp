@@ -3,6 +3,7 @@
 
 #include "ChooseBirdSkinItemUI.h"
 #include "Components/Button.h"
+#include "PaperFlipbook.h"
 
 void UChooseBirdSkinItemUI::NativeConstruct()
 {
@@ -17,4 +18,5 @@ void UChooseBirdSkinItemUI::NativeConstruct()
 void UChooseBirdSkinItemUI::OnChooseButtonClicked()
 {
 	UE_LOG(LogTemp, Log, TEXT("UChooseBirdSkinItemUI::OnChooseButtonClicked"));
+
 }
