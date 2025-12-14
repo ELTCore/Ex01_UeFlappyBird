@@ -18,6 +18,10 @@ public:
 	virtual void NativeConstruct() override;
 
 	void OnShow() override;
+	
 	void SetupBinding();
+
+	UFUNCTION()
+	void OnBirdSkinChoosed(class UPaperFlipbook* BirdFlipbook);
 	
 };

@@ -21,6 +21,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category="UI")
 	TSubclassOf<class UMainMenuUI> MainMenuUIClass;
 
+	UPROPERTY(EditDefaultsOnly, Category="BirdSkin")
+	class UPaperFlipbook* SwitchBirdSkin;
 
 private:
 	UPROPERTY()
@@ -28,4 +30,7 @@ private:
 
 	UFUNCTION()
 	bool PauseGameAndShowMainMenuUI();
+
+	UFUNCTION()
+	void OnBirdSkinChoosed(class UPaperFlipbook* BirdSkinChoosed);
 };

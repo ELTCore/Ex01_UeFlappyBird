@@ -11,6 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "UFlappyBird/Game/PlayerController/BirdPlayerController.h"
 
 // Sets default values
 ABird::ABird()
@@ -47,9 +48,10 @@ ABird::ABird()
 void ABird::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
-	if (BirdFlipbook && BirdFlipbookComponent)
+	
+	if (DefaultBirdFlipbook && BirdFlipbookComponent)
 	{
-		BirdFlipbookComponent->SetFlipbook(BirdFlipbook);
+		BirdFlipbookComponent->SetFlipbook(DefaultBirdFlipbook);
 		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
 	}
 

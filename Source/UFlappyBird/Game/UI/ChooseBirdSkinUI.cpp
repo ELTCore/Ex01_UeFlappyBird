@@ -3,12 +3,17 @@
 
 #include "ChooseBirdSkinUI.h"
 
+#include "UFlappyBird/Game/SubSystem/UISubSystem.h"
+
 void UChooseBirdSkinUI::NativeConstruct()
 {
 	Super::NativeConstruct();
 	SetIsFocusable(true);
 
-	
+	if (UUISubSystem* UISubSystem = UUISubSystem::GetInstance())
+	{
+		UISubSystem->OnBirdSkinChoosed.AddDynamic(this, &UChooseBirdSkinUI::OnBirdSkinChoosed);
+	}
 }
 
 void UChooseBirdSkinUI::OnShow()
@@ -27,4 +32,11 @@ void UChooseBirdSkinUI::OnShow()
 void UChooseBirdSkinUI::SetupBinding()
 {
 		
+}
+
+void UChooseBirdSkinUI::OnBirdSkinChoosed(UPaperFlipbook* BirdFlipbook)
+{
+	UE_LOG(LogTemp, Log, TEXT("OnBirdSkinChoosed"));
+	
+	this->OnHide();
 }

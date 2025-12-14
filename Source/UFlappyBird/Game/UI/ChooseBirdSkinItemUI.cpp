@@ -4,6 +4,7 @@
 #include "ChooseBirdSkinItemUI.h"
 #include "Components/Button.h"
 #include "PaperFlipbook.h"
+#include "UFlappyBird/Game/SubSystem/UISubSystem.h"
 
 void UChooseBirdSkinItemUI::NativeConstruct()
 {
@@ -19,4 +20,13 @@ void UChooseBirdSkinItemUI::OnChooseButtonClicked()
 {
 	UE_LOG(LogTemp, Log, TEXT("UChooseBirdSkinItemUI::OnChooseButtonClicked"));
 
+	if (!BirdFlipbook)
+	{
+		return;
+	}
+	if (UUISubSystem* UISubSystem = UUISubSystem::GetInstance())
+	{
+		UISubSystem->OnBirdSkinChoosed.Broadcast(BirdFlipbook);
+	}
+	
 }

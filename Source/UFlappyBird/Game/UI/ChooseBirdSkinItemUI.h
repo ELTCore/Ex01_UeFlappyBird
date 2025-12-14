@@ -29,7 +29,7 @@ public:
 	class UButton* ChooseButton;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="BirdFlipbook")
-	class UPaperFlipbookComponent* BirdFlipbook;
+	class UPaperFlipbook* BirdFlipbook;
 
 	UFUNCTION()
 	void OnChooseButtonClicked();

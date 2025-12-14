@@ -31,7 +31,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// 组件
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Bird")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Bird")
 	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
 	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
 	class UCameraComponent*        MainCemera;            // 主相机
@@ -39,7 +39,7 @@ public:
 	class USphereComponent*        ShpereComponent;       // 碰撞箱
 	// 资产
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird")
-	class UPaperFlipbook* BirdFlipbook; // 鸟
+	class UPaperFlipbook* DefaultBirdFlipbook; // 鸟
 
 	// 输入映射
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
