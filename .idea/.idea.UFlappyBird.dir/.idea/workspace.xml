@@ -9,28 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_0_Sprite.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_0_Sprite.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_1_Sprite.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_1_Sprite.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_2_Sprite.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/bird_blue_2_Sprite.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/bird_yellow_0_Sprite.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/bird_yellow_0_Sprite.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/Animation/RF_Blue_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/Animation/RF_Blue_Bird.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2D/Bird/Animation/RF_Yellow_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2D/Bird/Animation/RF_Yellow_Bird.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinItemUI.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ChooseBirdSkinUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_MainMenuUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_MainMenuUI.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/UISubSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/UISubSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/UISubSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/UISubSystem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinItemUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/UFlappyBird.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/UFlappyBird.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,22 +117,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Uproject.UFlappyBird.executor": "Debug",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "UnrealLogSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Uproject.UFlappyBird.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLogSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CidrLocalAttachDebugger.recentlyUsed">
       <recent name="com.jetbrains.rider.cpp.debugger.RiderCppLLDBDriverConfiguration" />
@@ -259,7 +241,8 @@
       <workItem from="1765265860819" duration="7293000" />
       <workItem from="1765461874439" duration="1164000" />
       <workItem from="1765716035561" duration="6248000" />
-      <workItem from="1765723477120" duration="1136000" />
+      <workItem from="1765723477120" duration="1777000" />
+      <workItem from="1765807444437" duration="1205000" />
     </task>
     <servers />
   </component>
