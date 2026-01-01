@@ -33,8 +33,11 @@ public:
 	// 组件
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Bird")
 	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
-	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
+	// 相机
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
 	class UCameraComponent*        MainCemera;            // 主相机
+	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
+	// 碰撞
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class USphereComponent*        ShpereComponent;       // 碰撞箱
 	// 资产
