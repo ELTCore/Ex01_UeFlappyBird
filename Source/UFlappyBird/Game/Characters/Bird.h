@@ -17,6 +17,7 @@ public:
 	ABird();
 	//
 	void OnConstruction(const FTransform& Transform) override;
+	//
 	bool InitializePlayerInput() const;
 
 protected:
