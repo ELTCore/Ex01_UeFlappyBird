@@ -8,11 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/LandActor.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/LandActor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/LandActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/LandActor.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +219,8 @@
       <workItem from="1766317065541" duration="780000" />
       <workItem from="1767268829237" duration="89000" />
       <workItem from="1767275641723" duration="3469000" />
-      <workItem from="1767359175194" duration="4745000" />
+      <workItem from="1767359175194" duration="5407000" />
+      <workItem from="1767538601730" duration="777000" />
     </task>
     <servers />
   </component>

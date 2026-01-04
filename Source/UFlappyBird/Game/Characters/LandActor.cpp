@@ -50,7 +50,7 @@ void ALandActor::BeginPlay()
 void ALandActor::LandMove(float DeltaTime)
 {
 	if (!LandSprite || !RenderLand || !RenderNextLand)
-	{
+	{ 
 		return;
 	}
 
