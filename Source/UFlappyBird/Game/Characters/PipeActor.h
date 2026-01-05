@@ -22,4 +22,17 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
+	class UPaperSprite* UpPipeSprite;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
+	class UPaperSprite* DownPipeSprite;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="0", UIMin="0"))
+	int32 PipesAmount;
+	
+	//
+	TArray<USceneComponent*> PipeArray;
 };
