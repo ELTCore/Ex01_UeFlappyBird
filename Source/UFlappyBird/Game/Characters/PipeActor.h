@@ -18,6 +18,8 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	//
+	virtual void OnConstruction(const FTransform& Transform) override;
 
 public:
 	// Called every frame
@@ -30,9 +32,9 @@ public:
 	class UPaperSprite* DownPipeSprite;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
-		meta = (ClampMin="0", UIMin="0"))
+		meta = (ClampMin="0", UIMin="0", ClampMax="255", UIMax="255"))
 	int32 PipesAmount;
 	
-	//
-	TArray<USceneComponent*> PipeArray;
+	UPROPERTY()
+	TArray<USceneComponent*> PipeSceneArray;
 };
