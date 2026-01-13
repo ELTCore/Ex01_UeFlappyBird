@@ -30,11 +30,35 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
 	class UPaperSprite* DownPipeSprite;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
 		meta = (ClampMin="0", UIMin="0", ClampMax="255", UIMax="255"))
 	int32 PipesAmount;
-	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="0", UIMin="0", ClampMax="999", UIMax="999"))
+	int32 PipeMaxHorizonGap;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="0", UIMin="0", ClampMax="999", UIMax="999"))
+	int32 PipeMinHorizonGap;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="0", UIMin="0", ClampMax="999", UIMax="999"))
+	int32 PipeMaxVerticalGap;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="0", UIMin="0", ClampMax="999", UIMax="999"))
+	int32 PipeMinVerticalGap;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="-999", UIMin="-999", ClampMax="999", UIMax="999"))
+	int32 PipeMinVerticalOffset;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe",
+		meta = (ClampMin="-999", UIMin="-999", ClampMax="999", UIMax="999"))
+	int32 PipeMaxVerticalOffset;
+
 	UPROPERTY()
 	TArray<USceneComponent*> PipeSceneArray;
 };

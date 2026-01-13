@@ -14,7 +14,13 @@ APipeActor::APipeActor()
 
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultRoot"));
 
-	PipesAmount = 3;
+	PipesAmount           = 3;
+	PipeMinHorizonGap     = 100;
+	PipeMaxHorizonGap     = 300;
+	PipeMinVerticalGap    = 500;
+	PipeMaxVerticalGap    = 800;
+	PipeMinVerticalOffset = -300;
+	PipeMaxVerticalOffset = 300;
 }
 
 // Called when the game starts or when spawned
@@ -36,27 +42,26 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 	}
 	PipeSceneArray.Empty();
 
+	int32 accumulateHorGap = 0;
 	for (int i = 0; i < PipesAmount; ++i)
 	{
 		// 注意：这里使用 NewObject 而非 CreateDefaultSubobject
 		FName            pipeCombineName  = *FString::Printf(TEXT("pipCombine_%d"), i);
 		USceneComponent* pipeCombineScene = NewObject<USceneComponent>(this, USceneComponent::StaticClass(),
 		                                                               pipeCombineName);
-
 		if (pipeCombineScene)
 		{
-			// 设置组件的创建方式，这能确保它在编辑器中表现得像个正常的组件
 			pipeCombineScene->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 			pipeCombineScene->SetupAttachment(RootComponent);
-			// 必须调用注册，否则编辑器里看不见，且不会渲染
+			int32 verticalOffset = FMath::RandRange(PipeMinVerticalOffset, PipeMaxVerticalOffset);
+			accumulateHorGap += FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
+			pipeCombineScene->SetRelativeLocation(FVector(accumulateHorGap, 0, verticalOffset));
 			pipeCombineScene->RegisterComponent();
 
-			//
-			FName upPipeName   = *FString::Printf(TEXT("UpPipe_%d"), i);
-			FName downPipeName = *FString::Printf(TEXT("DownPipe_%d"), i);
-
+			FName                  upPipeName = *FString::Printf(TEXT("UpPipe_%d"), i);
 			UPaperSpriteComponent* upPipeComp = NewObject<UPaperSpriteComponent>(
 				this, UPaperSpriteComponent::StaticClass(), upPipeName);
+			int32 verticalGap = FMath::RandRange(PipeMinVerticalGap, PipeMaxVerticalGap);
 			if (upPipeComp)
 			{
 				upPipeComp->CreationMethod = EComponentCreationMethod::UserConstructionScript;
@@ -65,10 +70,11 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				{
 					upPipeComp->SetSprite(UpPipeSprite);
 				}
+				upPipeComp->SetRelativeLocation(FVector(0, 0, -verticalGap * 0.5));
 				upPipeComp->RegisterComponent();
 			}
 
-
+			FName                  downPipeName = *FString::Printf(TEXT("DownPipe_%d"), i);
 			UPaperSpriteComponent* downPipeComp = NewObject<UPaperSpriteComponent>(
 				this, UPaperSpriteComponent::StaticClass(), downPipeName);
 			if (downPipeComp)
@@ -79,9 +85,9 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				{
 					downPipeComp->SetSprite(DownPipeSprite);
 				}
+				downPipeComp->SetRelativeLocation(FVector(0, 0, verticalGap * 0.5));
 				downPipeComp->RegisterComponent();
 			}
-
 			//
 			PipeSceneArray.Add(pipeCombineScene);
 		}
