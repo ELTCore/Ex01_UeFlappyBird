@@ -21,6 +21,11 @@ APipeActor::APipeActor()
 	PipeMaxVerticalGap    = 800;
 	PipeMinVerticalOffset = -300;
 	PipeMaxVerticalOffset = 300;
+
+	ResetLineLeft = -500;
+	ResetLineRight = 500;
+	
+	PipeMoveSpeed = -10;
 }
 
 // Called when the game starts or when spawned
@@ -41,7 +46,8 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 		}
 	}
 	PipeSceneArray.Empty();
-
+	PipeSceneArray.Reserve(PipesAmount);
+	
 	int32 accumulateHorGap = 0;
 	for (int i = 0; i < PipesAmount; ++i)
 	{
@@ -55,7 +61,7 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 			pipeCombineScene->SetupAttachment(RootComponent);
 			int32 verticalOffset = FMath::RandRange(PipeMinVerticalOffset, PipeMaxVerticalOffset);
 			accumulateHorGap += FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
-			pipeCombineScene->SetRelativeLocation(FVector(accumulateHorGap, 0, verticalOffset));
+			pipeCombineScene->SetRelativeLocation(FVector(accumulateHorGap, 0.0, verticalOffset));
 			pipeCombineScene->RegisterComponent();
 
 			FName                  upPipeName = *FString::Printf(TEXT("UpPipe_%d"), i);
@@ -70,7 +76,7 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				{
 					upPipeComp->SetSprite(UpPipeSprite);
 				}
-				upPipeComp->SetRelativeLocation(FVector(0, 0, -verticalGap * 0.5));
+				upPipeComp->SetRelativeLocation(FVector(0.0, 0.0, -verticalGap * 0.5));
 				upPipeComp->RegisterComponent();
 			}
 
@@ -85,7 +91,7 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				{
 					downPipeComp->SetSprite(DownPipeSprite);
 				}
-				downPipeComp->SetRelativeLocation(FVector(0, 0, verticalGap * 0.5));
+				downPipeComp->SetRelativeLocation(FVector(0.0, 0.0, verticalGap * 0.5));
 				downPipeComp->RegisterComponent();
 			}
 			//
@@ -98,4 +104,11 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 void APipeActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	PipeMove();
+}
+
+void APipeActor::PipeMove()
+{
+	
 }

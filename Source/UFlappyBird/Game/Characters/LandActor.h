@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "LandActor.generated.h"
 
+
 UCLASS()
 class UFLAPPYBIRD_API ALandActor : public AActor
 {
@@ -28,15 +29,19 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="LandSprite")
-	class UPaperSpriteComponent* RenderLand;
-	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="LandSprite")
-	class UPaperSpriteComponent* RenderNextLand;
+	class USceneComponent* RenderLandsComponent;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="LandSprite")
 	class UPaperSprite* LandSprite;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="LandSprite")
 	float MoveSpeedX;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="LandSprite")
+	TArray<class UPaperSpriteComponent*> LandSceneArray;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="LandSprite",
+		meta = (ClampMin="1", UIMin="1", ClampMax="256", UIMax="256"))
+	int32 LandActorAmount;
 	
 };
