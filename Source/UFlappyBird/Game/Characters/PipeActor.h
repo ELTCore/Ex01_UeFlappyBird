@@ -25,7 +25,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	//
-	void         PipeMove();
+	void PipeMove(float DeltaTime);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
 	class UPaperSprite* UpPipeSprite;
@@ -64,13 +64,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
 	int32 PipeMoveSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe");
-	int32 ResetLineLeft;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Pipe");
+	int32 PipeStartRegionPositionX;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Pipe");
+	class UBoxComponent* PipeStartRegion;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe");
-	int32 ResetLineRight;
-	
+	int32 PipeResetRegionPositionX;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Pipe");
+	class UBoxComponent* PipeResetRegion;
+
 	UPROPERTY()
 	TArray<USceneComponent*> PipeSceneArray;
-	
 };
