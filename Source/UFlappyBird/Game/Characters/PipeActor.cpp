@@ -18,14 +18,14 @@ APipeActor::APipeActor()
 	PipeResetRegion = CreateDefaultSubobject<UBoxComponent>(TEXT("PipeResetRegion"));
 	PipeStartRegion->SetupAttachment(RootComponent);
 	PipeResetRegion->SetupAttachment(RootComponent);
-#if WITH_EDITORONLY_DATA
-	PipeStartRegion->bIsEditorOnly       = true;
-	PipeStartRegion->bVisualizeComponent = true;
-	PipeResetRegion->bIsEditorOnly       = true;
-	PipeResetRegion->bVisualizeComponent = true;
-#endif
-	PipeStartRegion->SetHiddenInGame(true);
-	PipeResetRegion->SetHiddenInGame(true);
+	// #if WITH_EDITORONLY_DATA
+	// 	PipeStartRegion->bIsEditorOnly       = true;
+	// 	PipeStartRegion->bVisualizeComponent = true;
+	// 	PipeResetRegion->bIsEditorOnly       = true;
+	// 	PipeResetRegion->bVisualizeComponent = true;
+	// #endif
+	// 	PipeStartRegion->SetHiddenInGame(true);
+	// 	PipeResetRegion->SetHiddenInGame(true);
 
 	PipesAmount           = 3;
 	PipeMinHorizonGap     = 100;
@@ -54,8 +54,9 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 	/*
 	 *  处理初始管道位置
 	 */
-	for (USceneComponent* Comp : PipeSceneArray)
+	for (FPipeSceneData& data : PipeSceneArray)
 	{
+		USceneComponent* Comp = data.PipeCombine;
 		if (Comp)
 		{
 			Comp->DestroyComponent();
@@ -76,7 +77,8 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 			pipeCombineScene->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 			pipeCombineScene->SetupAttachment(RootComponent);
 			int32 verticalOffset = FMath::RandRange(PipeMinVerticalOffset, PipeMaxVerticalOffset);
-			accumulateHorGap += FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
+			int32 horizonOffset  = FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
+			accumulateHorGap += horizonOffset;
 			pipeCombineScene->SetRelativeLocation(FVector(accumulateHorGap, 0.0, verticalOffset));
 			pipeCombineScene->RegisterComponent();
 
@@ -111,15 +113,15 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				downPipeComp->RegisterComponent();
 			}
 			//
-			PipeSceneArray.Add(pipeCombineScene);
+			PipeSceneArray.Add({pipeCombineScene, horizonOffset});
 		}
 	}
 
 	/*
 	 * 在蓝图编辑器界面绘制管道刷新位置与重置位置 
 	 */
-	float lastPipePosX       = PipeSceneArray.Last()->GetRelativeLocation().X;
-	PipeStartRegionPositionX = lastPipePosX;
+	// float lastPipePosX       = PipeSceneArray.Last().PipeCombine->GetRelativeLocation().X;
+	// PipeStartRegionPositionX = lastPipePosX;
 	PipeStartRegion->SetRelativeLocation(FVector(PipeStartRegionPositionX, 0.0f, 0.0f));
 	PipeResetRegion->SetRelativeLocation(FVector(PipeResetRegionPositionX, 0.0f, 0.0f));
 }
@@ -136,18 +138,16 @@ void APipeActor::Tick(float DeltaTime)
 #pragma optimize("", off)
 void APipeActor::PipeMove(float DeltaTime)
 {
-	// @Todo 需要解决不断重置管道位置后，管道位置的横向偏移量可能越来越离谱的问题，问题产生原因：左侧重置线是固定的，右侧重置的位置则产生一定随机
-
 	for (int i = 0; i < PipeSceneArray.Num(); ++i)
 	{
-		USceneComponent* pipeCombineScene = PipeSceneArray[i];
+		USceneComponent* pipeCombineScene = PipeSceneArray[i].PipeCombine;
 
 		if (pipeCombineScene)
 		{
 			pipeCombineScene->AddRelativeLocation(FVector(DeltaTime * PipeMoveSpeed, 0.0, 0.0));
 
 			float curX = pipeCombineScene->GetRelativeLocation().X;
-			if (curX < PipeResetRegionPositionX)
+			if (curX < PipeResetRegionPositionX + PipeSceneArray[i].StartOffset)
 			{
 				int32 verticalGap   = FMath::RandRange(PipeMinVerticalGap, PipeMaxVerticalGap);
 				int32 randHorGap    = FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
@@ -166,7 +166,7 @@ void APipeActor::PipeMove(float DeltaTime)
 				}
 
 				pipeCombineScene->SetRelativeLocation(FVector(horOffset, 0.0, 0.0));
-
+				PipeSceneArray[i].StartOffset = randHorOffset;
 			}
 		}
 	}

@@ -6,6 +6,17 @@
 #include "GameFramework/Actor.h"
 #include "PipeActor.generated.h"
 
+USTRUCT(BlueprintType)
+struct FPipeSceneData
+{
+	GENERATED_BODY()
+
+	UPROPERTY()
+	class USceneComponent*  PipeCombine;
+	UPROPERTY()
+	int32					StartOffset;
+};
+
 UCLASS()
 class UFLAPPYBIRD_API APipeActor : public AActor
 {
@@ -73,7 +84,7 @@ public:
 	int32 PipeResetRegionPositionX;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Pipe");
 	class UBoxComponent* PipeResetRegion;
-
+	
 	UPROPERTY()
-	TArray<USceneComponent*> PipeSceneArray;
+	TArray<FPipeSceneData> PipeSceneArray;
 };
