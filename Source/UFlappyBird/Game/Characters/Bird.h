@@ -36,19 +36,19 @@ public:
 	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
 	// 相机
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
-	class UCameraComponent*        MainCemera;            // 主相机
+	class UCameraComponent*        MainCamera;            // 主相机
+	// 相机弹簧臂
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
 	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
 	// 碰撞
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	class USphereComponent*        ShpereComponent;       // 碰撞箱
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	class USphereComponent*        SphereComponent;       // 碰撞箱
 	// 资产
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird")
 	class UPaperFlipbook* DefaultBirdFlipbook; // 鸟
-
 	// 输入映射
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	class UInputMappingContext* InputMapping;
-
 	// Fly
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	class UInputAction* FlyAction;

@@ -18,43 +18,46 @@ ABird::ABird()
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	
+
 
 	// 组件构建
 	RootComponent         = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultRoot"));
 	BirdFlipbookComponent = CreateDefaultSubobject<UPaperFlipbookComponent>(TEXT("BirdFlipbookComponent"));
 	SpringArm             = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
-	MainCemera            = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCemera"));
-	ShpereComponent       = CreateDefaultSubobject<USphereComponent>(TEXT("USphereComponent"));
+	MainCamera            = CreateDefaultSubobject<UCameraComponent>(TEXT("MainCamera"));
+	SphereComponent       = CreateDefaultSubobject<USphereComponent>(TEXT("USphereComponent"));
 	// 组件依附
-	BirdFlipbookComponent->SetupAttachment(RootComponent);
+	if (BirdFlipbookComponent)
+	{
+		BirdFlipbookComponent->SetupAttachment(RootComponent);
+	}
 	SpringArm->SetupAttachment(RootComponent);
-	MainCemera->SetupAttachment(SpringArm);
-	ShpereComponent->SetupAttachment(RootComponent);
+	MainCamera->SetupAttachment(SpringArm);
+	if (SphereComponent && BirdFlipbookComponent)
+	{
+		SphereComponent->SetupAttachment(BirdFlipbookComponent);
+	}
 	// 组件设置
 	SpringArm->bDoCollisionTest = false;
-	MainCemera->SetProjectionMode(ECameraProjectionMode::Orthographic);
-	MainCemera->OrthoWidth = 1000.f;
+	MainCamera->SetProjectionMode(ECameraProjectionMode::Orthographic);
+	MainCamera->OrthoWidth = 1000.f;
 	SpringArm->SetRelativeRotation(FRotator(0.0, -90, 0.0));
+
 
 	// 输入映射
 	InputMapping = nullptr;
 	FlyAction    = nullptr;
-
-	
-	
 }
 
 void ABird::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
-	
+
 	if (DefaultBirdFlipbook && BirdFlipbookComponent)
 	{
 		BirdFlipbookComponent->SetFlipbook(DefaultBirdFlipbook);
 		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
 	}
-
 }
 
 
@@ -83,10 +86,12 @@ bool ABird::InitializePlayerInput() const
 void ABird::BeginPlay()
 {
 	Super::BeginPlay();
-
+	if (BirdFlipbookComponent)
+	{
+		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
+	}
 	if (InitializePlayerInput())
 		return;
-
 }
 
 // Called every frame
@@ -115,5 +120,4 @@ void ABird::OnFlyAction(const FInputActionValue& InputActionValue)
 	UE_LOG(LogTemp, Display, TEXT("OnFlyAction"));
 	BirdFlipbookComponent->SetPhysicsLinearVelocity(FVector::ZeroVector);
 	BirdFlipbookComponent->AddImpulse(FVector(0, 0, 2500)); // 开启物理模拟才有效果
-
 }
