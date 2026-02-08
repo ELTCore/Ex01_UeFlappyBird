@@ -36,13 +36,13 @@ public:
 	class UPaperFlipbookComponent* BirdFlipbookComponent; // 鸟
 	// 相机
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
-	class UCameraComponent*        MainCamera;            // 主相机
+	class UCameraComponent* MainCamera; // 主相机
 	// 相机弹簧臂
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Bird")
-	class USpringArmComponent*     SpringArm;             // 相机弹簧臂
+	class USpringArmComponent* SpringArm; // 相机弹簧臂
 	// 碰撞
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class USphereComponent*        SphereComponent;       // 碰撞箱
+	class USphereComponent* SphereComponent; // 碰撞箱
 	// 资产
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird")
 	class UPaperFlipbook* DefaultBirdFlipbook; // 鸟
@@ -52,6 +52,12 @@ public:
 	// Fly
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	class UInputAction* FlyAction;
-	void OnFlyAction(const FInputActionValue& InputActionValue);
+	void                OnFlyAction(const FInputActionValue& InputActionValue);
+	// FlyImpluse
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+	double FlyImpluse = 2000;
 
+	// 碰撞重叠事件
+	void OnComponentBeginOverlapEvent(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor,
+	                                  class UPrimitiveComponent* OtherComp, int32                   OtherBodyIndex);
 };

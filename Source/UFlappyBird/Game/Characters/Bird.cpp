@@ -90,8 +90,12 @@ void ABird::BeginPlay()
 	{
 		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
 	}
-	if (InitializePlayerInput())
+	if (!InitializePlayerInput())
 		return;
+
+	// 为组件 Shperecomponent 设置 Overlap 事件
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, );
+	
 }
 
 // Called every frame
@@ -119,5 +123,5 @@ void ABird::OnFlyAction(const FInputActionValue& InputActionValue)
 {
 	UE_LOG(LogTemp, Display, TEXT("OnFlyAction"));
 	BirdFlipbookComponent->SetPhysicsLinearVelocity(FVector::ZeroVector);
-	BirdFlipbookComponent->AddImpulse(FVector(0, 0, 2500)); // 开启物理模拟才有效果
+	BirdFlipbookComponent->AddImpulse(FVector(0, 0, FlyImpluse)); // 开启物理模拟才有效果
 }
