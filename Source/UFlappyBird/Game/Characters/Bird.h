@@ -53,17 +53,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	class UInputAction* FlyAction;
 	void                OnFlyAction(const FInputActionValue& InputActionValue);
-	// FlyImpluse
+	// 飞行动作 FlyImpluse
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
 	double FlyImpluse = 2000;
-
+	
 	// 碰撞重叠事件
 	UFUNCTION()
 	void OnComponentBeginOverlapEvent(class UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	                                  class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
 	                                  const FHitResult&          SweepResult);
-
 	UFUNCTION()
 	void OnComponentHitEvent(class UPrimitiveComponent* HitComponent, AActor* OtherActor,
 	                         class UPrimitiveComponent* OtherComp, FVector    NormalImpulse, const FHitResult& Hit);
+
+	
+	
 };

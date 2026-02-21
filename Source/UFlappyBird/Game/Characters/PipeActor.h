@@ -12,9 +12,13 @@ struct FPipeSceneData
 	GENERATED_BODY()
 
 	UPROPERTY()
-	class USceneComponent*  PipeCombine;
+	class USceneComponent* PipeCombine = nullptr;
+
 	UPROPERTY()
-	int32					StartOffset;
+	int32 StartOffset = 0;
+
+	UPROPERTY()
+	bool AlreadyGetScore = false;
 };
 
 UCLASS()
@@ -37,6 +41,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	//
 	void PipeMove(float DeltaTime);
+	// 检测管道位置，判断玩家是否获得了得分
+	void CheckPipePositionIfScore(FPipeSceneData& PipeSceneData);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Pipe")
 	class UPaperSprite* UpPipeSprite;
@@ -84,7 +90,16 @@ public:
 	int32 PipeResetRegionPositionX;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Pipe");
 	class UBoxComponent* PipeResetRegion;
-	
+
 	UPROPERTY()
 	TArray<FPipeSceneData> PipeSceneArray;
+
+
+	// 管道经过小鸟位置时播放金币音效
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Sound")
+	class USoundBase* CoinSound = nullptr;
+
+	// 得分音效的判定点X轴位置
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Sound");
+	int32 GetScorePointPositionX = 0;
 };

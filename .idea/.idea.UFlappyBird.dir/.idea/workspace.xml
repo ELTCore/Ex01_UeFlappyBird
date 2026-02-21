@@ -9,11 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PipeActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PipeActor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/PipeActor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +226,9 @@
       <workItem from="1770131956154" duration="1241000" />
       <workItem from="1770558035231" duration="1159000" />
       <workItem from="1770895943037" duration="3667000" />
-      <workItem from="1770905432973" duration="1842000" />
+      <workItem from="1770905432973" duration="1887000" />
+      <workItem from="1771550199816" duration="1650000" />
+      <workItem from="1771682074498" duration="2751000" />
     </task>
     <servers />
   </component>

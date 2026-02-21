@@ -11,6 +11,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "PipeActor.h"
 #include "UFlappyBird/Game/PlayerController/BirdPlayerController.h"
 
 // Sets default values
@@ -36,6 +37,7 @@ ABird::ABird()
 	if (SphereComponent && BirdFlipbookComponent)
 	{
 		SphereComponent->SetupAttachment(BirdFlipbookComponent);
+		// SphereComponent->SetCollisionObjectType(ECC_OverlapAll_Deprecated);
 		SphereComponent->SetCollisionProfileName(TEXT("OverlapAll"));
 	}
 	// 组件设置
@@ -96,17 +98,20 @@ void ABird::BeginPlay()
 	if (BirdFlipbookComponent)
 	{
 		BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
+
+		// 为小鸟组件添加Hit事件
+		BirdFlipbookComponent->SetNotifyRigidBodyCollision(true); // 在开启物理模拟后允许Hit事件执行
+		BirdFlipbookComponent->SetCollisionObjectType(ECC_Pawn);  // ObjectType修改为Pawn 与其它物体之间是阻挡关系
+		BirdFlipbookComponent->OnComponentHit.AddDynamic(this, &ABird::OnComponentHitEvent);
 	}
 	if (!InitializePlayerInput())
 		return;
 
-	// 为组件 Shperecomponent 设置 Overlap 事件
-	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ABird::OnComponentBeginOverlapEvent);
-
-	// 为小鸟组件添加Hit事件
-	BirdFlipbookComponent->GetBodyInstance()->bNotifyRigidBodyCollision = true; // 在开启物理模拟后允许Hit事件执行
-	BirdFlipbookComponent->SetCollisionObjectType(ECC_Pawn); // ObjectType修改为Pawn 与其它物体之间是阻挡关系
-	BirdFlipbookComponent->OnComponentHit.AddDynamic(this, );
+	if (SphereComponent)
+	{
+		// 为组件 Shperecomponent 设置 Overlap 事件
+		SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ABird::OnComponentBeginOverlapEvent);
+	}
 }
 
 // Called every frame
@@ -147,11 +152,14 @@ void ABird::OnComponentBeginOverlapEvent(class UPrimitiveComponent* OverlappedCo
                                          class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
                                          const FHitResult&          SweepResult)
 {
-	UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
+	if (APipeActor* PipeActor = Cast<APipeActor>(OtherActor))
+	{
+		UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
+	}
 }
 
 void ABird::OnComponentHitEvent(class UPrimitiveComponent* HitComponent, AActor* OtherActor,
-	class UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+                                class UPrimitiveComponent* OtherComp, FVector    NormalImpulse, const FHitResult& Hit)
 {
 	UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
 }

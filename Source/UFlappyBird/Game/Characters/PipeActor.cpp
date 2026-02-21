@@ -5,6 +5,7 @@
 
 #include "PaperSpriteComponent.h"
 #include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 
 // Sets default values
@@ -113,7 +114,7 @@ void APipeActor::OnConstruction(const FTransform& Transform)
 				downPipeComp->RegisterComponent();
 			}
 			//
-			PipeSceneArray.Add({pipeCombineScene, horizonOffset});
+			PipeSceneArray.Add({pipeCombineScene, horizonOffset, false});
 		}
 	}
 
@@ -135,19 +136,23 @@ void APipeActor::Tick(float DeltaTime)
 }
 
 
-#pragma optimize("", off)
+// #pragma optimize("", off)
 void APipeActor::PipeMove(float DeltaTime)
 {
 	for (int i = 0; i < PipeSceneArray.Num(); ++i)
 	{
-		USceneComponent* pipeCombineScene = PipeSceneArray[i].PipeCombine;
+		FPipeSceneData&  PipeSceneData    = PipeSceneArray[i];
+		USceneComponent* pipeCombineScene = PipeSceneData.PipeCombine;
 
 		if (pipeCombineScene)
 		{
+			CheckPipePositionIfScore(PipeSceneData);
+
 			pipeCombineScene->AddRelativeLocation(FVector(DeltaTime * PipeMoveSpeed, 0.0, 0.0));
 
 			float curX = pipeCombineScene->GetRelativeLocation().X;
-			if (curX < PipeResetRegionPositionX + PipeSceneArray[i].StartOffset)
+
+			if (curX < PipeResetRegionPositionX + PipeSceneData.StartOffset)
 			{
 				int32 verticalGap   = FMath::RandRange(PipeMinVerticalGap, PipeMaxVerticalGap);
 				int32 randHorGap    = FMath::RandRange(PipeMinHorizonGap, PipeMaxHorizonGap);
@@ -166,9 +171,31 @@ void APipeActor::PipeMove(float DeltaTime)
 				}
 
 				pipeCombineScene->SetRelativeLocation(FVector(horOffset, 0.0, 0.0));
-				PipeSceneArray[i].StartOffset = randHorOffset;
+				PipeSceneData.StartOffset     = randHorOffset;
+				PipeSceneData.AlreadyGetScore = false;
 			}
 		}
 	}
 }
-#pragma optimize("", on)
+
+void APipeActor::CheckPipePositionIfScore(FPipeSceneData& PipeSceneData)
+{
+	if (PipeSceneData.AlreadyGetScore)
+	{
+		return;
+	}
+	USceneComponent* pipeCombineScene = PipeSceneData.PipeCombine;
+	if (pipeCombineScene)
+	{
+		float curX = pipeCombineScene->GetRelativeLocation().X;
+
+		if (curX < GetScorePointPositionX && CoinSound)
+		{
+			PipeSceneData.AlreadyGetScore = true;
+
+			UGameplayStatics::PlaySound2D(GetWorld(), CoinSound);
+		}
+	}
+}
+
+// #pragma optimize("", on)
