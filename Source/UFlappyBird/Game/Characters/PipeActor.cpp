@@ -6,6 +6,7 @@
 #include "PaperSpriteComponent.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "UFlappyBird/Game/GameState/BirdGameStateBase.h"
 
 
 // Sets default values
@@ -46,6 +47,8 @@ APipeActor::APipeActor()
 void APipeActor::BeginPlay()
 {
 	Super::BeginPlay();
+
+	BirdGameState = Cast<ABirdGameStateBase>(UGameplayStatics::GetGameState(GetWorld()));
 }
 
 void APipeActor::OnConstruction(const FTransform& Transform)
@@ -193,6 +196,11 @@ void APipeActor::CheckPipePositionIfScore(FPipeSceneData& PipeSceneData)
 		{
 			PipeSceneData.AlreadyGetScore = true;
 
+			if (BirdGameState)
+			{
+				BirdGameState->AddScore();
+			}
+			
 			UGameplayStatics::PlaySound2D(GetWorld(), CoinSound);
 		}
 	}

@@ -161,5 +161,5 @@ void ABird::OnComponentBeginOverlapEvent(class UPrimitiveComponent* OverlappedCo
 void ABird::OnComponentHitEvent(class UPrimitiveComponent* HitComponent, AActor* OtherActor,
                                 class UPrimitiveComponent* OtherComp, FVector    NormalImpulse, const FHitResult& Hit)
 {
-	UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
+	// UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
 }

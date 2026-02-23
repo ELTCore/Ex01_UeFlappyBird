@@ -17,10 +17,10 @@ class UFLAPPYBIRD_API ABirdHud : public AHUD
 public:
 	virtual void BeginPlay() override;
 	virtual void OnConstruction(const FTransform& Transform) override;
+	virtual void DrawHUD() override;
 	
-	UPROPERTY(EditAnywhere, Category="HUD")
-	TSubclassOf<class UStartButton> StartButtonClass;
+	void DrawGameScoreToScreen();
 
-	UPROPERTY()
-	UStartButton* StartButton;
+public:
+	class ABirdGameStateBase* BirdGameState = nullptr;
 };

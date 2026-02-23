@@ -94,7 +94,9 @@ public:
 	UPROPERTY()
 	TArray<FPipeSceneData> PipeSceneArray;
 
-
+	UPROPERTY()
+	class ABirdGameStateBase* BirdGameState = nullptr;
+ 
 	// 管道经过小鸟位置时播放金币音效
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Sound")
 	class USoundBase* CoinSound = nullptr;
