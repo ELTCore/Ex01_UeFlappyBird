@@ -40,3 +40,4 @@ void UChooseBirdSkinUI::OnBirdSkinChoosed(UPaperFlipbook* BirdFlipbook)
 	
 	this->OnHide();
 }
+

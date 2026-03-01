@@ -33,5 +33,14 @@ void ABirdHud::DrawGameScoreToScreen()
 	}
 
 	int32 curScore = BirdGameState->GetCurrentScore();
-	DrawText(FString::Printf(TEXT("Current Score: %d"), curScore), FLinearColor::Red, 20, 20);
+
+	if (!ScoreFont && GEngine)
+	{
+		ScoreFont = GEngine->GetMediumFont();
+	}
+	if (ScoreFont)
+	{
+		DrawText(FString::Printf(TEXT("Current Score: %d"), curScore),
+		         FLinearColor::Red, 20, 20, ScoreFont, 2.0);
+	}
 }

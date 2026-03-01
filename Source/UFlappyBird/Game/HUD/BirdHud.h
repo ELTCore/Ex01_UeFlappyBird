@@ -23,4 +23,8 @@ public:
 
 public:
 	class ABirdGameStateBase* BirdGameState = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
+	class UFont* ScoreFont;
+	
 };

@@ -15,5 +15,6 @@ class UFLAPPYBIRD_API ADefaultGameMode : public AGameModeBase
 	GENERATED_BODY()
 public:
 	ADefaultGameMode();
-	
+	//
+	void SetGameState();
 };

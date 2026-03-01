@@ -3,6 +3,8 @@
 
 #include "BirdPlayerController.h"
 
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
 #include "PaperFlipbookComponent.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
@@ -21,6 +23,13 @@ void ABirdPlayerController::BeginPlay()
 	if (UUISubSystem* UISubSystem = UUISubSystem::GetInstance())
 	{
 		UISubSystem->OnBirdSkinChoosed.AddDynamic(this, &ABirdPlayerController::OnBirdSkinChoosed);
+	}
+
+	// 添加 Mapping Context
+	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(
+		GetLocalPlayer()))
+	{
+		Subsystem->AddMappingContext(DefaultMappingContext, 0);
 	}
 }
 
@@ -46,12 +55,28 @@ bool ABirdPlayerController::PauseGameAndShowMainMenuUI()
 void ABirdPlayerController::OnBirdSkinChoosed(UPaperFlipbook* BirdSkinChoosed)
 {
 	SwitchBirdSkin = BirdSkinChoosed;
-	ABird* Bird = Cast<ABird>(this->GetPawn());
+	ABird* Bird    = Cast<ABird>(this->GetPawn());
 	if (Bird)
 	{
-		// @Todo bug, 切换为与bird初始FlipBook不一致的FLipBook后导致其动不了了
 		Bird->BirdFlipbookComponent->SetFlipbook(SwitchBirdSkin);
 		Bird->BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
 	}
-	
+}
+
+void ABirdPlayerController::OnEscAction(const FInputActionValue& InputActionValue)
+{
+	PauseGameAndShowMainMenuUI();
+}
+
+void ABirdPlayerController::SetupInputComponent()
+{
+	Super::SetupInputComponent();
+
+	// 绑定 Input Action
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent))
+	{
+		// ETriggerEvent::Triggered 表示按键被触发（按下或持续按住，取决于 IA 配置）
+		EnhancedInputComponent->BindAction(EscAction, ETriggerEvent::Triggered, this,
+		                                   &ABirdPlayerController::OnEscAction);
+	}
 }
