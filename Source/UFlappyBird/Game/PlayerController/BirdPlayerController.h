@@ -45,4 +45,7 @@ private:
 
 	UFUNCTION()
 	void OnBirdSkinChoosed(class UPaperFlipbook* BirdSkinChoosed);
+
+	UFUNCTION()
+	void OnBirdDeaded();
 };

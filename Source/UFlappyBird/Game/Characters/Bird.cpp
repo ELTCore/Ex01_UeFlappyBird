@@ -11,8 +11,10 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "LandActor.h"
 #include "PipeActor.h"
 #include "UFlappyBird/Game/PlayerController/BirdPlayerController.h"
+#include "UFlappyBird/Game/SubSystem/BirdEventSubSystem.h"
 
 // Sets default values
 ABird::ABird()
@@ -152,10 +154,25 @@ void ABird::OnComponentBeginOverlapEvent(class UPrimitiveComponent* OverlappedCo
                                          class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
                                          const FHitResult&          SweepResult)
 {
+	bool gameover = false;
 	if (APipeActor* PipeActor = Cast<APipeActor>(OtherActor))
 	{
-		UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
+		// UE_LOG(LogTemp, Display, TEXT(__FUNCSIG__));
+		gameover = true;
 	}
+	else if (ALandActor* LandActor = Cast<ALandActor>(OtherActor))
+	{
+		gameover = true;
+	}
+
+	if (gameover)
+	{
+		if (UBirdEventSubSystem* BirdEventSubSystem = UBirdEventSubSystem::GetInstance())
+		{
+			BirdEventSubSystem->OnBirdDeaded.Broadcast();
+		}
+	}
+	
 }
 
 void ABird::OnComponentHitEvent(class UPrimitiveComponent* HitComponent, AActor* OtherActor,

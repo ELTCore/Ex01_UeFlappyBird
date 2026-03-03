@@ -8,17 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcb6b2b5-3542-4873-92db-73b1004416fe" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/BirdEventSubSystem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/SubSystem/BirdEventSubSystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFlappyBird.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_BirdHud.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_BirdHud.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_BirdPlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_BirdPlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_DefaultGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_DefaultGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Font/NanoDyongWongSong_Font.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Font/NanoDyongWongSong_Font.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/GameMode/DefaultGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/HUD/BirdHud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/HUD/BirdHud.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/HUD/BirdHud.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/HUD/BirdHud.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Bird.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_MainMenuUI.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_MainMenuUI.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Level/L_M01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Level/L_M01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/Characters/Bird.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/PlayerController/BirdPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/UFlappyBird/Game/UI/ChooseBirdSkinUI.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +30,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Intermediate/Build/Win64/UnrealEditor/Inc/Engine/UHT/SpringArmComponent.generated.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Plugins/Marketplace/Developer/RiderLink/Source/RD/thirdparty/spdlog/include/spdlog/details/backtracer.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Plugins/Marketplace/Developer/RiderLink/Source/RD/thirdparty/spdlog/include/spdlog/fmt/bin_to_hex.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/CoreGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Epic Games/UE_5.6/Engine/Source/Runtime/Core/Public/Delegates/Delegate.h" root0="FORCE_HIGHLIGHTING" />
@@ -239,7 +238,8 @@
       <workItem from="1771768098984" duration="1536000" />
       <workItem from="1771835918657" duration="10189000" />
       <workItem from="1772199911399" duration="1338000" />
-      <workItem from="1772365824475" duration="3175000" />
+      <workItem from="1772365824475" duration="5589000" />
+      <workItem from="1772540632162" duration="9488000" />
     </task>
     <servers />
   </component>

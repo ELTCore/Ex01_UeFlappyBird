@@ -9,6 +9,7 @@
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
 #include "UFlappyBird/Game/Characters/Bird.h"
+#include "UFlappyBird/Game/SubSystem/BirdEventSubSystem.h"
 #include "UFlappyBird/Game/UI/MainMenuUI.h"
 #include "UFlappyBird/Game/SubSystem/UISubSystem.h"
 
@@ -30,6 +31,12 @@ void ABirdPlayerController::BeginPlay()
 		GetLocalPlayer()))
 	{
 		Subsystem->AddMappingContext(DefaultMappingContext, 0);
+	}
+
+	//
+	if (UBirdEventSubSystem* BirdEventSubSystem = UBirdEventSubSystem::GetInstance())
+	{
+		BirdEventSubSystem->OnBirdDeaded.AddDynamic(this, &ABirdPlayerController::OnBirdDeaded);
 	}
 }
 
@@ -60,6 +67,18 @@ void ABirdPlayerController::OnBirdSkinChoosed(UPaperFlipbook* BirdSkinChoosed)
 	{
 		Bird->BirdFlipbookComponent->SetFlipbook(SwitchBirdSkin);
 		Bird->BirdFlipbookComponent->SetSimulatePhysics(true); // 开启物理模拟
+	}
+}
+
+void ABirdPlayerController::OnBirdDeaded()
+{
+	if (GetWorld())
+	{
+		// 获取当前关卡的名称（字符串格式）
+		FString CurrentLevelName = GetWorld()->GetMapName();
+
+		// 在编辑器模式下（PIE），关卡名可能包含前缀（如 UEDPIE_0_），OpenLevel 可以自动处理
+		UGameplayStatics::OpenLevel(GetWorld(), FName(*CurrentLevelName));
 	}
 }
 
